@@ -1,4 +1,4 @@
-import { Link, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import { ProductList } from '../components/ProductList';
 import { SearchBox } from '../components/SearchBox';
 import { getProducts } from '../fakeAPI';
