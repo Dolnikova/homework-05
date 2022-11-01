@@ -8,7 +8,7 @@ const root = createRoot(rootElement);
 
 root.render(
   <StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/homework-05">
       <App />
     </BrowserRouter>
   </StrictMode>

@@ -7,18 +7,19 @@ import Mission from './Mission';
 import Team from './Team';
 import Reviews from './Reviews';
 import { SharedLayout } from './SharedLayout';
-// import { useLocation } from 'react-router-dom';
+import { NotFound } from './NotFound';
+import { useLocation } from 'react-router-dom';
+import { useEffect } from 'react';
 
 export const App = () => {
-  // const location = useLocation();
+  const location = useLocation();
 
-  // useEffect(() => {
-  //   Analytics.send(location);
-  // }, [location]);
+  useEffect(() => {
+    Analytics.send(location);
+  }, [location]);
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
-        {console.log(<SharedLayout />)}
         <Route index element={<Home />} />
         <Route path="about" element={<About />}>
           <Route path="mission" element={<Mission />} />
@@ -28,6 +29,7 @@ export const App = () => {
         <Route path="products" element={<Products />} />
         <Route path="products/:id" element={<ProductDetails />} />
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 };

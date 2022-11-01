@@ -2,10 +2,10 @@ import { useSearchParams } from 'react-router-dom';
 import { ProductList } from '../components/ProductList';
 import { SearchBox } from '../components/SearchBox';
 import { getProducts } from '../fakeAPI';
-// import { useLocation } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 
 export const Products = () => {
-  // const location = useLocation();
+  const location = useLocation();
   const products = getProducts();
   const [searchParams, setSearchParams] = useSearchParams();
   const productName = searchParams.get('name') ?? '';
