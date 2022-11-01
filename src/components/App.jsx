@@ -13,10 +13,6 @@ import { useEffect } from 'react';
 
 export const App = () => {
   const location = useLocation();
-
-  useEffect(() => {
-    Analytics.send(location);
-  }, [location]);
   return (
     <Routes>
       <Route path="/" element={<SharedLayout />}>
